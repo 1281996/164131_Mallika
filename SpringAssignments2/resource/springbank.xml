@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" 
+"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+
+
+<bean id="service1" class="com.mallika.bank.BankAccount">
+<property name="accountId" value="101"></property>
+<property name="accountHolderName" value="mallika"></property>
+<property name="accountType" value="current"></property>
+<property name="accountBalance" value="20000.0"></property>
+
+</bean>
+
+<bean id="accountRepository1" class="com.mallika.bank.BankAccountepositoryImpl">
+
+<property name="bankAccount">
+<list>
+ <ref bean="service1"></ref>	
+</list>
+</property>
+
+</bean>
+
+<bean id="bankAccountServiceImpl" class="com.mallika.bank.BankAccountServiceImpl">
+
+<property name="accountRepository" ref="accountRepository1">
+</property></bean>
+
+
+     <bean id="bankAccouncon" class="com.mallika.bank.BankAccountController">
+
+<property name="accountServiceImpl" ref="bankAccountServiceImpl">
+</property></bean>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+
+
+</beans>
+
+<!-- <bean id="customer" class="com.mallika.spring.Customer">
+	
+	<property name="adress" ref="address"></property>
+	<property name="custId" value="123"></property>
+	
+	<property name="custName" value="mallika"></property>
+	
+	<property name="custNumber" value="9912567"></property>
+
+	
+	</bean>
+	<bean id="address" class="com.mallika.spring.Address">
+	<property name="street" value="beml"></property>
+	<property name="city" value="bang"></property>
+	<property name="country" value="india"></property>
+	<property name="zip" value="560066"></property>
+	</bean>
+	
+ -->
+
+
+
