@@ -1,16 +1,20 @@
 package com.mallika.bank;
 
-import java.util.ArrayList;
+
+
+import java.util.List;
 
 public class BankAccountepositoryImpl  {
-	//BankAccountRepositoryDAO obj = new BankAccountRepositoryDAO();
-	ArrayList<BankAccount> bankAccount;
+	
+	List<BankAccount> bankAccount;
   
-	public ArrayList<BankAccount> getBankAccount() {
+	
+
+	public List<BankAccount> getBankAccount() {
 		return bankAccount;
 	}
 
-	public void setBankAccount(ArrayList<BankAccount> bankAccount) {
+	public void setBankAccount(List<BankAccount> bankAccount) {
 		this.bankAccount = bankAccount;
 	}
 
@@ -33,13 +37,14 @@ public class BankAccountepositoryImpl  {
 			if (option.equals("withdraw")) {
 				if (index.getAccountId() == accountId) {
 					newBalance = index.getAccountBalance() - balance;
-					
+					index.accountBalance=newBalance;
 				}
 			}
 
 			else if (option.equals("deposit")) {
 				if (index.getAccountId() == accountId) {
 					newBalance = index.getAccountBalance() + balance;
+					index.accountBalance=newBalance;
 				}
 			}
 		}
